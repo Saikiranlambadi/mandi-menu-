@@ -29,7 +29,7 @@ const items = [
   { name: "Extra Mayonnaise", cat: "Extras", portion: "1 Dip", price: "₹40", image: "images/mayoness.png", desc: "Creamy mayonnaise dip." },
   { name: "Any Cool Drinks", cat: "Drinks", portion: "1 Bottle", price: "₹25", image: "images/thumsup.png", desc: "Chilled cool drinks." },
   { name: "Water Bottle", cat: "Drinks", portion: "1 Bottle", price: "₹20", image: "images/water_bottle.jpg", desc: "Packaged drinking water." },
-  { name: "Chicken Shawarma SPL", cat: "Shawarma", portion: "Special", price: "₹140", image: "images/chicken_shawarma.jpg", desc: "Special chicken shawarma with extra goodness." }
+  { name: "Chicken Shawarma SPL", cat: "Shawarma", portion: "Special", price: "₹150", image: "images/chicken_shawarma.jpg", desc: "Special chicken shawarma with extra goodness." }
 ];
 
 const slider = document.getElementById("slider");
