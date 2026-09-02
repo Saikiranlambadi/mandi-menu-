@@ -22,20 +22,13 @@ const items = [
   { name: "Fish Fry Mandi", cat: "Fish Mandi", portion: "3 Persons", price: "₹680", image: "images/fish_fry_mandi.jpg", desc: "Crispy fish fry mandi made for sharing." },
   { name: "Fish Fry Mandi", cat: "Fish Mandi", portion: "4 Persons", price: "₹900", image: "images/fish_fry_mandi.jpg", desc: "Crispy fish fry mandi made for sharing." },
 
-  // Chicken Biryani
-  { name: "Chicken Biryani", cat: "Biryani", portion: "Single", price: "₹140", image: "images/chicken_biryani.jpg", desc: "Aromatic chicken biryani." },
-  { name: "Chicken Biryani", cat: "Biryani", portion: "Full", price: "₹260", image: "images/chicken_biryani.jpg", desc: "Aromatic chicken biryani." },
-  { name: "Chicken Biryani", cat: "Biryani", portion: "Family", price: "₹500", image: "images/chicken_biryani.jpg", desc: "Aromatic chicken biryani." },
-
   // Extras & Beverages
   { name: "Chicken Fry Extra Piece", cat: "Extras", portion: "1 Extra Piece", price: "₹160", image: "images/chicken_fry_mandi.jpg", desc: "Add an extra chicken fry piece." },
   { name: "Chicken Broasted Extra Piece", cat: "Extras", portion: "1 Extra Piece", price: "₹200", image: "images/chicken_broasted_mandi.jpg", desc: "Add an extra crispy broasted chicken piece." },
   { name: "Extra Mandi Rice", cat: "Extras", portion: "1 Serving", price: "₹140", image: "images/extra_mandi_rice.jpg", desc: "Extra serving of fragrant mandi rice." },
   { name: "Extra Mayonnaise", cat: "Extras", portion: "1 Dip", price: "₹40", image: "images/mayoness.png", desc: "Creamy mayonnaise dip." },
-  { name: "Basanti Sweets", cat: "Sweets", portion: "1 Serving", price: "₹100", image: "images/basundi.png", desc: "A sweet finish to your meal." },
-  { name: "Any Cool Drinks", cat: "Drinks", portion: "1 Bottle", price: "₹20", image: "images/thumsup.png", desc: "Chilled cool drinks." },
+  { name: "Any Cool Drinks", cat: "Drinks", portion: "1 Bottle", price: "₹25", image: "images/thumsup.png", desc: "Chilled cool drinks." },
   { name: "Water Bottle", cat: "Drinks", portion: "1 Bottle", price: "₹20", image: "images/water_bottle.jpg", desc: "Packaged drinking water." },
-  { name: "Chicken Shawarma Regular", cat: "Shawarma", portion: "Regular", price: "₹120", image: "images/chicken_shawarma.jpg", desc: "Classic chicken shawarma wrapped fresh." },
   { name: "Chicken Shawarma SPL", cat: "Shawarma", portion: "Special", price: "₹140", image: "images/chicken_shawarma.jpg", desc: "Special chicken shawarma with extra goodness." }
 ];
 
