@@ -29,7 +29,8 @@ const items = [
   { name: "Extra Mayonnaise", cat: "Extras", portion: "1 Dip", price: "₹40", image: "images/mayoness.png", desc: "Creamy mayonnaise dip." },
   { name: "Any Cool Drinks", cat: "Drinks", portion: "1 Bottle", price: "₹25", image: "images/thumsup.png", desc: "Chilled cool drinks." },
   { name: "Water Bottle", cat: "Drinks", portion: "1 Bottle", price: "₹20", image: "images/water_bottle.jpg", desc: "Packaged drinking water." },
-  { name: "Chicken Shawarma SPL", cat: "Shawarma", portion: "Special", price: "₹150", image: "images/chicken_shawarma.jpg", desc: "Special chicken shawarma with extra goodness." }
+  { name: "Chicken Shawarma SPL", cat: "Shawarma", portion: "Special", price: "₹150", image: "images/chicken_shawarma.jpg", desc: "Special chicken shawarma with extra goodness." },
+  { name: "Double Ka Meetha", cat: "Desserts", portion: "1 Serving", price: "₹120", image: "images/double_ka_meetha.jpg", desc: "Classic Hyderabadi bread pudding soaked in sweetened milk, topped with dry fruits." }
 ];
 
 const slider = document.getElementById("slider");
@@ -82,4 +83,69 @@ document.addEventListener("keydown", e => {
   if (e.key === "ArrowLeft") slider.scrollBy({ left: -slider.clientWidth, behavior: "smooth" });
 });
 
+// ── 3-dot menu logic ─────────────────────────────────────────────────────────
+const menuBtn      = document.getElementById("menuBtn");
+const menuDropdown = document.getElementById("menuDropdown");
+const menuOverlay  = document.getElementById("menuOverlay");
 
+const filterMap = {
+  fry:      i => items[i].name.toLowerCase().includes("fry") && items[i].cat.toLowerCase().includes("mandi") && !items[i].cat.toLowerCase().includes("fish"),
+  broasted: i => items[i].name.toLowerCase().includes("broasted"),
+  mutton:   i => items[i].cat.toLowerCase().includes("mutton"),
+  fish:     i => items[i].cat.toLowerCase().includes("fish"),
+  juice:    i => items[i].cat.toLowerCase().includes("drink"),
+  extras:   i => items[i].cat.toLowerCase().includes("extras"),
+  shawarma: i => items[i].cat.toLowerCase().includes("shawarma"),
+  dessert:  i => items[i].cat.toLowerCase().includes("dessert"),
+};
+
+function openMenu() {
+  menuDropdown.classList.add("open");
+  menuOverlay.classList.add("open");
+}
+function closeMenu() {
+  menuDropdown.classList.remove("open");
+  menuOverlay.classList.remove("open");
+}
+
+menuBtn.addEventListener("click", e => {
+  e.stopPropagation();
+  menuDropdown.classList.contains("open") ? closeMenu() : openMenu();
+});
+menuOverlay.addEventListener("click", closeMenu);
+
+document.querySelectorAll(".menu-links a").forEach(link => {
+  link.addEventListener("click", e => {
+    e.preventDefault();
+    const filter = link.dataset.filter;
+    const fn = filterMap[filter];
+    if (!fn) return;
+    const idx = items.findIndex((_, i) => fn(i));
+    if (idx !== -1) {
+      slider.scrollTo({ left: idx * slider.clientWidth, behavior: "smooth" });
+    }
+    closeMenu();
+  });
+
+// ── Promo Toast: show after 30 seconds ───────────────────────────────────────
+const promoToast = document.getElementById("promoToast");
+const promoClose = document.getElementById("promoClose");
+
+setTimeout(() => {
+  promoToast.classList.add("show");
+}, 30000);
+
+promoClose.addEventListener("click", (e) => {
+  e.stopPropagation();
+  promoToast.classList.remove("show");
+});
+
+// Click the toast → jump to Double Ka Meetha slide
+promoToast.addEventListener("click", () => {
+  const idx = items.findIndex(item => item.name === "Double Ka Meetha");
+  if (idx !== -1) {
+    slider.scrollTo({ left: idx * slider.clientWidth, behavior: "smooth" });
+  }
+  promoToast.classList.remove("show");
+});
+});
